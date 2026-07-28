@@ -1,0 +1,90 @@
+.about-content-box {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: fit-content;
+  margin: 0 auto 3rem;
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas:
+    'story story hours'
+    'story story hours'
+    'story story hours'
+    'philosophy philosophy philosophy'
+    'philosophy philosophy philosophy'
+    'philosophy philosophy philosophy'
+    'location location location';
+  gap: 1rem;
+}
+
+.location-container,
+.story-container,
+.opening-hours-container,
+.philosophy-container {
+  background-color: hsl(240, 11%, 96%);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.story-container {
+  grid-area: story;
+}
+
+.opening-hours-container {
+  grid-area: hours;
+}
+
+.philosophy-container {
+  grid-area: philosophy;
+}
+
+.location-container {
+  grid-area: location;
+}
+
+.common-style {
+  color: purple;
+  border-bottom: 2px solid purple;
+}
+
+@media (max-width: 768px) {
+  .about-content-box {
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; 
+    grid-template-areas:
+      'story'
+      'hours'
+      'philosophy'
+      'location';
+  }
+
+  .story-container {
+    grid-area: story;
+  }
+
+  .opening-hours-container {
+    grid-area: hours;
+  }
+
+  .philosophy-container {
+    grid-area: philosophy;
+  }
+
+  .location-container {
+    grid-area: location;
+  }
+  .location-container,
+  .story-container,
+  .opening-hours-container,
+  .philosophy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
