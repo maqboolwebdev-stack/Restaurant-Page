@@ -51,6 +51,8 @@ function loadHome() {
   quoteText.textContent = `Good food brings people together, and every great meal deserves a story.`;
   quoteContainer.append(quoteHeading, quoteText);
 
+  contentBox.className = 'home-content-container';
+
   contentBox.append(
     headingContainer,
     welcomeSection,
