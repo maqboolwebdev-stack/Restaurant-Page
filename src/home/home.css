@@ -1,6 +1,8 @@
 #content {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  width: 80vw;
+  width: 85%;
+  min-width: 80%;
+  max-width: 90%;
   margin: 0 auto 3rem;
   display: flex;
   flex-direction: column;
@@ -13,7 +15,7 @@
 .today-sp,
 .quote-container {
   background-color: hsl(240, 11%, 96%);
-  width: 80%;
+  width: 70%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -26,23 +28,23 @@
 .welcome-text,
 .today,
 .quote-heading {
-    color: purple;
+  color: purple;
 }
 
 .explore-btn {
-    cursor: pointer;
-    background-color: purple;
-    color: white;
-    border: none;
-    padding: .5rem 1rem;
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
 }
 
 .explore-btn:hover {
-  opacity: .75;
+  opacity: 0.75;
 }
 
 .explore-btn:active {
-  transform: scale(.99)
+  transform: scale(0.99);
 }
 
 .footer {
@@ -54,9 +56,21 @@
 .link {
   text-decoration: none;
   color: purple;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #content {
+    width: 90%;
+  }
+  .heading-container,
+  .welcome-section,
+  .today-sp,
+  .quote-container {
+    width: 90%;
+  }
 }
