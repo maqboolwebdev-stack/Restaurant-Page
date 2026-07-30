@@ -1,0 +1,11 @@
+:root {
+    --primary-color: hsl(300, 100%, 25%);
+    --body-background-color: hsl(0, 0%, 100%);
+    --container-background-color: hsl(240, 11%, 96%);
+    --header-button-bg-color: hsl(240, 10%, 96%);
+    --header-button-hover-bg-color: hsla(0, 0%, 0%, 0.1);
+    --header-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --primary-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --price-color: green;
+    --explore-menu-button-color: white;
+}
