@@ -1,17 +1,19 @@
+@import "variables.css";
+
 header {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   height: 12vh;
   min-height: 50px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-family: var(--header-font-family) !important;
   width: clamp(80%, 10vw + 70%, 90%);
   margin: 0 auto 5rem;
 }
 
 body {
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--body-background-color);
 }
 
 nav {
@@ -30,13 +32,14 @@ nav {
   font-size: clamp(0.5rem, 3vw, 1rem) !important;
   letter-spacing: 1px;
   border: 2px solid transparent;
-  transition: all 0.3s ease;
-  color: purple;
+  transition: all 0.15s ease;
+  background-color: var(--header-button-bg-color);
+  color: var(--primary-color);
 }
 
 .btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-bottom: 5px solid hsl(300, 100%, 25%);
+  background-color: var(--header-button-hover-bg-color);
+  border-bottom: 5px solid var(--primary-color);
 }
 
 .btn:active {
