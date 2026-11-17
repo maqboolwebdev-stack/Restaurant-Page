@@ -1,5 +1,6 @@
 import { contentBox } from '../home/home.js';
 import { menuData } from './menu-items-data.js';
+import { setActiveNav } from '../navigation.js';
 import './menu.css';
 
 const menuBtn = document.querySelector('#menu-btn');
@@ -29,6 +30,9 @@ function createMenuItem(item) {
 }
 
 export function loadMenu() {
+  // add style menuBtn when Menu load
+  setActiveNav('menu-btn');
+
   // add style class for Menu main container
   contentBox.className = 'menu-content';
 

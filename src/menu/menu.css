@@ -1,4 +1,4 @@
-@import "/src/styles/variables.css";
+@import '/src/styles/variables.css';
 
 .menu-content {
   font-family: var(--primary-font-family);

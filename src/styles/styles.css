@@ -1,4 +1,4 @@
-@import "variables.css";
+@import 'variables.css';
 
 header {
   display: flex;
@@ -39,11 +39,15 @@ nav {
 
 .btn:hover {
   background-color: var(--header-button-hover-bg-color);
-  border-bottom: 5px solid var(--primary-color);
+  border-bottom: 0.313rem solid var(--primary-color);
 }
 
 .btn:active {
   background-color: transparent;
+}
+
+.btn.is-active {
+  border-bottom: 0.313rem solid var(--primary-color);
 }
 
 @media (max-width: 768px) {
@@ -54,5 +58,9 @@ nav {
 
   nav {
     gap: 1rem;
+  }
+
+  .btn.is-active {
+    border-bottom: 0.188rem solid var(--primary-color);
   }
 }

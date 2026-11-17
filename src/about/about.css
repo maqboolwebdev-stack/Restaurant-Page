@@ -1,4 +1,4 @@
-@import "/src/styles/variables.css";
+@import '/src/styles/variables.css';
 
 .about-content-box {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -58,7 +58,7 @@
   .about-content-box {
     width: 90%;
     grid-template-columns: 1fr;
-    grid-template-rows: auto; 
+    grid-template-rows: auto;
     grid-template-areas:
       'story'
       'hours'

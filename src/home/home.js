@@ -1,9 +1,13 @@
 export const contentBox = document.querySelector('#content');
+import { setActiveNav } from '../navigation.js';
 const homeBtn = document.querySelector('#home-btn');
 
 import { loadMenu } from '../menu/menu.js';
 
 function loadHome() {
+  // add style to home-btn when home page load
+  setActiveNav('home-btn');
+
   // creating elements
   const headingContainer = document.createElement('div');
   const heading = document.createElement('h1');
@@ -91,14 +95,14 @@ function loadHome() {
   );
 
   exploreBtn.addEventListener('click', function () {
-  // Clear the Main-container for new Data
+    // Clear the Main-container for new Data
     contentBox.innerHTML = '';
 
     loadMenu();
   });
 }
 
-  // creating elements for footer for every page
+// creating elements for footer for every page
 const footer = document.createElement('footer');
 const link = document.createElement('a');
 
@@ -109,7 +113,7 @@ link.className = 'link';
 link.href = `https://github.com/maqboolwebdev-stack/Restaurant-Page`;
 link.textContent = `Created by Waqas Maqbool`;
 
-// Appending element 
+// Appending element
 footer.append(link); // in footer and,
 document.body.append(footer); // footer in body
 
