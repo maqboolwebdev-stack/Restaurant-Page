@@ -87,8 +87,9 @@
 
 .link {
   text-decoration: none;
-  color: var(--primary-color);
+  color: #fff;
   padding: 0.5rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 .link:hover {

@@ -39,6 +39,16 @@
   border-bottom: 2px solid var(--primary-color);
 }
 
+.menu-content > .menu-items-heading,
+.menu-category > .menu-items-heading {
+  width: min(100%, var(--content-card-width));
+  padding: 1rem var(--card-padding);
+  text-align: center;
+  background-color: var(--container-background-color);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
 @media (max-width: 768px) {
   .menu-content {
     width: calc(100% - 2rem);

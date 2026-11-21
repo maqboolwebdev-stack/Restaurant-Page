@@ -7,6 +7,7 @@ function loadAbout() {
   // add style to about when about page load
   setActiveNav('about-btn');
   document.title = 'About | Ember & Olive';
+  document.body.dataset.page = 'about';
 
   // creating elements
   const storyContainer = document.createElement('section');

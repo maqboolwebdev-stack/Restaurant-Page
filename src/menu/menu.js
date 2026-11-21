@@ -33,6 +33,7 @@ export function loadMenu() {
   // add style menuBtn when Menu load
   setActiveNav('menu-btn');
   document.title = 'Menu | Ember & Olive';
+  document.body.dataset.page = 'menu';
 
   // add style class for Menu main container
   contentBox.className = 'menu-content';

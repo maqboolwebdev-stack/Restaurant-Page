@@ -45,6 +45,32 @@ body {
   font-family: var(--primary-font-family);
 }
 
+body[data-page] {
+  background-color: #211c19;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body[data-page='home'] {
+  background-image:
+    linear-gradient(rgba(18, 13, 11, 0.58), rgba(18, 13, 11, 0.68)),
+    url('../assets/images/home-table.svg');
+}
+
+body[data-page='menu'] {
+  background-image:
+    linear-gradient(rgba(15, 20, 17, 0.62), rgba(15, 20, 17, 0.72)),
+    url('../assets/images/menu-spread.svg');
+}
+
+body[data-page='about'] {
+  background-image:
+    linear-gradient(rgba(22, 16, 13, 0.62), rgba(22, 16, 13, 0.72)),
+    url('../assets/images/about-interior.svg');
+}
+
 .home-content-container,
 .menu-content,
 .about-content-box {
@@ -85,7 +111,8 @@ nav {
 }
 
 .btn:hover {
-  background-color: var(--header-button-hover-bg-color);
+  background-color: var(--primary-color);
+  color: white;
   border-bottom: 0.313rem solid var(--primary-color);
 }
 
@@ -93,9 +120,6 @@ nav {
   border-color: var(--primary-color);
 }
 
-.btn:active {
-  background-color: transparent;
-}
 
 .btn.is-active {
   border-bottom: 0.313rem solid var(--primary-color);
@@ -127,5 +151,12 @@ nav {
   .menu-content,
   .about-content-box {
     width: calc(100% - 1.25rem);
+  }
+}
+
+@media (max-width: 768px) {
+  body[data-page] {
+    background-attachment: scroll;
+    background-position: center top;
   }
 }

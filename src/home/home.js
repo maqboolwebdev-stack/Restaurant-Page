@@ -8,6 +8,7 @@ function loadHome() {
   // add style to home-btn when home page load
   setActiveNav('home-btn');
   document.title = 'Home | Ember & Olive';
+  document.body.dataset.page = 'home';
 
   // creating elements
   const headingContainer = document.createElement('header');
