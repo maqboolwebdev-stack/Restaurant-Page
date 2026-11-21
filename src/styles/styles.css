@@ -47,6 +47,16 @@ body {
   line-height: 1.6;
 }
 
+::selection {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
 h1,
 h2,
 h3,
