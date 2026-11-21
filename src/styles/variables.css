@@ -20,4 +20,5 @@
   --card-hover-text-color: hsl(38, 33%, 94%);
   --card-hover-heading-color: hsl(42, 72%, 68%);
   --card-hover-border-color: hsla(42, 72%, 68%, 0.7);
+  --scrollbar-hover-color: hsl(300, 100%, 18%);
 }
