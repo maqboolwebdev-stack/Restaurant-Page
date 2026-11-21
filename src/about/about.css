@@ -1,12 +1,9 @@
 @import '/src/styles/variables.css';
 
 .about-content-box {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   height: fit-content;
-  margin: 0 auto 3rem;
-  padding: 1rem;
+  padding: 0;
   text-align: center;
-  width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(7, 1fr);
@@ -26,7 +23,9 @@
 .opening-hours-container,
 .philosophy-container {
   background-color: var(--container-background-color);
-  padding: 1rem;
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -73,19 +72,19 @@
 }
 
 .common-style {
-  color: var(--primary-color);
+  padding-bottom: 0.25rem;
   border-bottom: 2px solid var(--primary-color);
 }
 
 @media (max-width: 768px) {
   .about-content-box {
-    width: 90%;
+    width: calc(100% - 2rem);
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
       'story'
-      'hours'
       'philosophy'
+      'hours'
       'location';
   }
 
@@ -111,16 +110,5 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-}
-
-@media (max-width: 1150px) {
-  .about-content-box {
-    width: 80%;
-  }
-}
-@media (max-width: 1000px) {
-  .about-content-box {
-    width: 90%;
   }
 }

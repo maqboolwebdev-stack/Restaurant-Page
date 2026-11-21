@@ -1,12 +1,7 @@
 @import '/src/styles/variables.css';
 
 .menu-content {
-  font-family: var(--primary-font-family);
   height: fit-content;
-  margin: 0 auto 3rem;
-  width: 85%;
-  min-width: 80%;
-  max-width: 90%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -22,9 +17,11 @@
 }
 
 .menu-items {
-  padding: 1rem;
-  width: 70%;
+  padding: var(--card-padding);
+  width: min(100%, var(--content-card-width));
   background-color: var(--container-background-color);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -38,15 +35,12 @@
 }
 
 .menu-items-heading {
+  padding-bottom: 0.25rem;
   border-bottom: 2px solid var(--primary-color);
-  color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
   .menu-content {
-    width: 90%;
-  }
-  .menu-items {
-    width: 90%;
+    width: calc(100% - 2rem);
   }
 }

@@ -7,7 +7,7 @@ import { loadMenu } from '../menu/menu.js';
 function loadHome() {
   // add style to home-btn when home page load
   setActiveNav('home-btn');
-  document.title = 'Ember & Olive';
+  document.title = 'Home | Ember & Olive';
 
   // creating elements
   const headingContainer = document.createElement('header');
@@ -19,6 +19,8 @@ function loadHome() {
   // adding style classes
   headingContainer.className = 'heading-container';
   heading.className = 'heading';
+  tagline1.className = 'hero-tagline';
+  tagline2.className = 'hero-description';
   exploreBtn.className = 'explore-btn';
 
   // filling the data to elements

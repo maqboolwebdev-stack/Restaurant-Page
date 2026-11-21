@@ -7,6 +7,7 @@ header {
   height: 12vh;
   min-height: 50px;
   font-family: var(--header-font-family) !important;
+  width: 85%;
   width: clamp(80%, 10vw + 70%, 90%);
   margin: 0 auto 5rem;
 }
@@ -32,9 +33,34 @@ header {
   outline-offset: 3px;
 }
 
+button:focus,
+a:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+
 body {
   min-height: 100vh;
   background-color: var(--body-background-color);
+  font-family: var(--primary-font-family);
+}
+
+.home-content-container,
+.menu-content,
+.about-content-box {
+  width: calc(100% - 2rem);
+  max-width: var(--page-width);
+  margin: 0 auto 3rem;
+  font-family: var(--primary-font-family);
+}
+
+.common-style,
+.menu-items-heading,
+.heading,
+.welcome-text,
+.today,
+.quote-heading {
+  color: var(--primary-color);
 }
 
 nav {
@@ -85,7 +111,21 @@ nav {
     gap: 1rem;
   }
 
+  .btn {
+    flex: 1;
+    height: 44px;
+    padding: 0 0.75rem;
+  }
+
   .btn.is-active {
     border-bottom: 0.188rem solid var(--primary-color);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content-container,
+  .menu-content,
+  .about-content-box {
+    width: calc(100% - 1.25rem);
   }
 }

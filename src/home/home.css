@@ -1,11 +1,6 @@
 @import '/src/styles/variables.css';
 
 .home-content-container {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  width: 85%;
-  min-width: 80%;
-  max-width: 90%;
-  margin: 0 auto 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,8 +12,10 @@
 .today-sp,
 .quote-container {
   background-color: var(--container-background-color);
-  width: 70%;
-  padding: 1rem;
+  width: min(100%, var(--content-card-width));
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,12 +30,45 @@
   color: var(--primary-color);
 }
 
+.heading-container {
+  width: min(100%, var(--content-card-width));
+  min-height: 280px;
+  padding: clamp(1.25rem, 5vw, 2.5rem) clamp(1rem, 4vw, 2rem);
+  justify-content: center;
+}
+
+.heading {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.hero-tagline {
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.hero-description {
+  max-width: 38rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.125rem);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
 .explore-btn {
   cursor: pointer;
   background-color: var(--primary-color);
   color: var(--explore-menu-button-color);
   border: none;
   padding: 0.5rem 1rem;
+  min-height: 44px;
+  max-width: 100%;
+  width: fit-content;
+  min-width: 160px;
+  line-height: 1.25;
+  border-radius: 4px;
 }
 
 .explore-btn:hover {
@@ -75,13 +105,38 @@
 }
 
 @media (max-width: 768px) {
+  .home-content-container,
   #content {
-    width: 90%;
+    width: calc(100% - 2rem);
   }
+
   .heading-container,
   .welcome-section,
   .today-sp,
   .quote-container {
-    width: 90%;
+    width: 100%;
+  }
+
+  .heading-container {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content-container,
+  #content {
+    width: calc(100% - 1.25rem);
+  }
+
+  .heading-container {
+    min-height: 220px;
+  }
+
+  .explore-btn {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: clamp(1.75rem, 13vw, 2.5rem);
   }
 }
