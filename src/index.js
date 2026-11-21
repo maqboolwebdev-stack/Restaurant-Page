@@ -7,4 +7,3 @@ import './menu/menu.css';
 import './about/about.js';
 import './about/about.css';
 
-console.log('Live Present MOMENT');
