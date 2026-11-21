@@ -1,0 +1,72 @@
+.cursor-tracker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 22px;
+  height: 22px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+.cursor-orbit {
+  --cursor-offset-x: 0px;
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--card-hover-heading-color);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+  transform: translateX(var(--cursor-offset-x)) scale(1);
+  transition: transform 160ms ease;
+}
+
+.cursor-orbit::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.cursor-tracker.is-visible {
+  opacity: 1;
+  will-change: transform;
+}
+
+.cursor-orbit.is-pressed {
+  transform: translateX(var(--cursor-offset-x)) scale(0.82);
+}
+
+.cursor-tracker.is-interactive .cursor-orbit {
+  --cursor-offset-x: -28px;
+}
+
+.cursor-tracker.is-interactive .cursor-orbit.is-pressed {
+  --cursor-offset-x: 0px;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.has-cursor-orbit,
+  body.has-cursor-orbit * {
+    cursor: none;
+  }
+
+  body.has-cursor-orbit a[href],
+  body.has-cursor-orbit button:not(:disabled),
+  body.has-cursor-orbit [role='button'],
+  body.has-cursor-orbit summary {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-tracker {
+    display: none;
+  }
+}

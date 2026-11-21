@@ -6,4 +6,5 @@ import './menu/menu.js';
 import './menu/menu.css';
 import './about/about.js';
 import './about/about.css';
+import './cursor/cursor.js';
 
