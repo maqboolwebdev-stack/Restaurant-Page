@@ -1,5 +1,6 @@
 export const contentBox = document.querySelector('#content');
 import { setActiveNav } from '../navigation.js';
+
 const homeBtn = document.querySelector('#home-btn');
 
 import { loadMenu } from '../menu/menu.js';
@@ -114,16 +115,21 @@ function loadHome() {
 // creating elements for footer for every page
 const footer = document.createElement('footer');
 const link = document.createElement('a');
+const githubSvg = document.createElement('span');
 
 // adding style classes
 footer.className = 'footer';
 link.className = 'link';
+githubSvg.className = 'githubSvg';
 
 link.href = `https://github.com/maqboolwebdev-stack/Restaurant-Page`;
+link.setAttribute('target', '_blank');
+link.setAttribute('rel', 'noopener noreferrer');
 link.textContent = `Created by Waqas Maqbool`;
 link.setAttribute('aria-label', 'Created by Waqas Maqbool - view the project on GitHub');
 
 // Appending element
+link.prepend(githubSvg);
 footer.append(link); // in footer and,
 document.body.append(footer); // footer in body
 

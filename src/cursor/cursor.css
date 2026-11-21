@@ -60,7 +60,8 @@
   body.has-cursor-orbit a[href],
   body.has-cursor-orbit button:not(:disabled),
   body.has-cursor-orbit [role='button'],
-  body.has-cursor-orbit summary {
+  body.has-cursor-orbit summary,
+  body.has-cursor-orbit .githubSvg {
     cursor: pointer;
   }
 }

@@ -276,3 +276,39 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
+.footer {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.githubSvg {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  cursor: pointer;
+  -webkit-mask: url('../assets/images/github.svg') no-repeat center / contain;
+  mask: url('../assets/images/github.svg') no-repeat center / contain;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover .githubSvg {
+  background-color: var(--primary-color);
+}

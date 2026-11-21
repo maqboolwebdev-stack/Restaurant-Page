@@ -24,7 +24,7 @@ if (pointerQuery.matches) {
   let frameId = null;
   let initialized = false;
   const interactiveSelector =
-    'a[href], button, input:not([type="hidden"]), select, textarea, summary, [role="button"], [tabindex]:not([tabindex="-1"])';
+    'a[href], button, input:not([type="hidden"]), select, textarea, summary, [role="button"], .githubSvg, [tabindex]:not([tabindex="-1"])';
 
   function render() {
     tracker.style.transform = `translate3d(${x - 11}px, ${y - 11}px, 0)`;
