@@ -43,6 +43,36 @@ body {
   min-height: 100vh;
   background-color: var(--body-background-color);
   font-family: var(--primary-font-family);
+  font-size: var(--body-font-size);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4vw + 0.9rem, 3.75rem);
+}
+
+h2 {
+  font-size: clamp(1.625rem, 2vw + 1rem, 2.125rem);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 1.2vw + 1rem, 1.65rem);
+}
+
+h4,
+h5,
+h6 {
+  font-size: clamp(1.1rem, 0.7vw + 1rem, 1.35rem);
 }
 
 body[data-page] {
@@ -118,13 +148,19 @@ body[data-page='about'] {
   #content .surface-card:hover .today,
   #content .surface-card:hover .quote-heading,
   #content .surface-card:hover .phone-link,
-  #content .surface-card:hover .price {
+  #content .surface-card:hover .price,
+  #content .surface-card:hover .opening-hours-table th {
     color: var(--card-hover-heading-color);
   }
 
   #content .surface-card:hover .common-style,
-  #content .surface-card:hover .menu-items-heading {
+  #content .surface-card:hover .menu-items-heading,
+  #content .surface-card:hover .opening-hours-table thead th {
     border-bottom-color: var(--card-hover-heading-color);
+  }
+
+  #content .surface-card:hover .opening-hours-table tbody tr {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -141,7 +177,7 @@ nav {
   height: clamp(30px, 5vw, 50px);
   padding: 0 2em;
   font-weight: 700 !important;
-  font-size: clamp(0.5rem, 3vw, 1rem) !important;
+  font-size: var(--button-font-size) !important;
   letter-spacing: 1px;
   border: 2px solid transparent;
   transition: all 0.15s ease;
@@ -167,7 +203,7 @@ nav {
 @media (max-width: 768px) {
   header {
     width: 90%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   nav {

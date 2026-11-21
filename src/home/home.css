@@ -45,14 +45,14 @@
 }
 
 .hero-tagline {
-  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
   font-weight: 700;
   line-height: 1.25;
 }
 
 .hero-description {
   max-width: 38rem;
-  font-size: clamp(0.95rem, 2.5vw, 1.125rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   line-height: 1.5;
   text-wrap: pretty;
 }
@@ -62,6 +62,8 @@
   background-color: var(--primary-color);
   color: var(--explore-menu-button-color);
   border: none;
+  font-size: var(--button-font-size);
+  font-weight: 700;
   padding: 0.5rem 1rem;
   min-height: 44px;
   max-width: 100%;

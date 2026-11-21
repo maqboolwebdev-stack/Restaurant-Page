@@ -5,16 +5,18 @@
   --header-button-bg-color: hsl(240, 10%, 96%);
   --header-button-hover-bg-color: hsla(0, 0%, 0%, 0.1);
   --header-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --primary-font-family:
-    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --primary-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --heading-font-family: Georgia, 'Times New Roman', serif;
+  --body-font-size: clamp(1.0625rem, 0.25vw + 1rem, 1.125rem);
+  --button-font-size: clamp(1rem, 0.3vw + 0.95rem, 1.125rem);
   --price-color: green;
   --explore-menu-button-color: white;
-  --page-width: 960px;
-  --content-card-width: 680px;
+  --page-width: 1024px;
+  --content-card-width: 720px;
   --card-radius: 8px;
   --card-padding: clamp(1.25rem, 4vw, 2rem);
   --card-shadow: 0 8px 4px hsla(300, 100%, 25%, 0.082);
-  --card-hover-background-color: hsla(24, 18%, 11%, 0.96);
+  --card-hover-background-color: hsla(24, 18%, 11%, 0.307);
   --card-hover-text-color: hsl(38, 33%, 94%);
   --card-hover-heading-color: hsl(42, 72%, 68%);
   --card-hover-border-color: hsla(42, 72%, 68%, 0.7);

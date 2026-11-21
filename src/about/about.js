@@ -77,33 +77,63 @@ function loadAbout() {
   openingHoursContainer.setAttribute('aria-labelledby', 'hours-heading');
   const openingHoursHeading = document.createElement('h2');
   openingHoursHeading.id = 'hours-heading';
-  const openingHoursList = document.createElement('dl');
+  const openingHoursTable = document.createElement('table');
+  const openingHoursColumns = document.createElement('colgroup');
+  const openingHoursHead = document.createElement('thead');
+  const openingHoursHeaderRow = document.createElement('tr');
+  const openingHoursBody = document.createElement('tbody');
 
   // adding style classes
   openingHoursContainer.className = 'opening-hours-container surface-card';
   openingHoursHeading.className = 'common-style';
   openingHoursHeading.textContent = `Opening Hours`;
 
-  // filling the data to elements
+  const dayColumn = document.createElement('col');
+  const openingColumn = document.createElement('col');
+  const closingColumn = document.createElement('col');
+  dayColumn.className = 'day-column';
+  openingColumn.className = 'time-column';
+  closingColumn.className = 'time-column';
+  openingHoursColumns.append(dayColumn, openingColumn, closingColumn);
+
+  ['Day', 'Opens', 'Closes'].forEach((label) => {
+    const columnHeading = document.createElement('th');
+    columnHeading.scope = 'col';
+    columnHeading.textContent = label;
+    openingHoursHeaderRow.append(columnHeading);
+  });
+  openingHoursHead.append(openingHoursHeaderRow);
+  openingHoursTable.className = 'opening-hours-table';
+
   const hours = [
-    ['Monday', '12:00 PM - 10:00 PM'],
-    ['Tuesday', '12:00 PM - 10:00 PM'],
-    ['Wednesday', '12:00 PM - 10:00 PM'],
-    ['Thursday', '12:00 PM - 10:30 PM'],
-    ['Friday', '12:00 PM - 11:00 PM'],
-    ['Saturday', '11:00 AM - 11:00 PM'],
-    ['Sunday', '11:00 AM - 9:00 PM'],
+    ['Monday', '12:00 PM', '10:00 PM'],
+    ['Tuesday', '12:00 PM', '10:00 PM'],
+    ['Wednesday', '12:00 PM', '10:00 PM'],
+    ['Thursday', '12:00 PM', '10:30 PM'],
+    ['Friday', '12:00 PM', '11:00 PM'],
+    ['Saturday', '11:00 AM', '11:00 PM'],
+    ['Sunday', '11:00 AM', '9:00 PM'],
   ];
 
-  hours.forEach(([day, time]) => {
-    const dayTerm = document.createElement('dt');
-    const timeDescription = document.createElement('dd');
-    dayTerm.textContent = day;
-    timeDescription.textContent = time;
-    openingHoursList.append(dayTerm, timeDescription);
+  hours.forEach(([day, opens, closes]) => {
+    const row = document.createElement('tr');
+    const dayCell = document.createElement('th');
+    const opensCell = document.createElement('td');
+    const closesCell = document.createElement('td');
+    dayCell.scope = 'row';
+    dayCell.textContent = day;
+    opensCell.textContent = opens;
+    closesCell.textContent = closes;
+    row.append(dayCell, opensCell, closesCell);
+    openingHoursBody.append(row);
   });
 
-  openingHoursContainer.append(openingHoursHeading, openingHoursList);
+  openingHoursTable.append(
+    openingHoursColumns,
+    openingHoursHead,
+    openingHoursBody,
+  );
+  openingHoursContainer.append(openingHoursHeading, openingHoursTable);
 
   // creating elements
   const locationContainer = document.createElement('section');

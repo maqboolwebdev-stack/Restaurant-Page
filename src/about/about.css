@@ -5,16 +5,16 @@
   padding: 0;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   grid-template-rows: repeat(7, 1fr);
   grid-template-areas:
-    'story story hours'
-    'story story hours'
-    'story story hours'
-    'philosophy philosophy philosophy'
-    'philosophy philosophy philosophy'
-    'philosophy philosophy philosophy'
-    'location location location';
+    'story hours'
+    'story hours'
+    'story hours'
+    'philosophy philosophy'
+    'philosophy philosophy'
+    'philosophy philosophy'
+    'location location';
   gap: 1rem;
 }
 
@@ -32,21 +32,44 @@
   align-items: center;
 }
 
-.opening-hours-container dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.25rem 1rem;
+.opening-hours-table {
   width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.opening-hours-table th,
+.opening-hours-table td {
+  padding: 0.4rem 0.15rem;
   text-align: left;
 }
 
-.opening-hours-container dt {
+.opening-hours-table th:nth-child(n + 2),
+.opening-hours-table td {
+  text-align: left;
+}
+
+.opening-hours-table thead th {
+  color: var(--primary-color);
+  font-size: clamp(0.95rem, 0.9vw, 1rem);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.opening-hours-table tbody tr {
+  border-bottom: 1px solid hsla(300, 100%, 25%, 0.12);
+}
+
+.opening-hours-table tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.opening-hours-table tbody th {
   font-weight: 700;
 }
 
-.opening-hours-container dd {
-  margin: 0;
-  text-align: right;
+.opening-hours-table th:first-child,
+.opening-hours-table td {
+  white-space: nowrap;
 }
 
 .phone-link {
@@ -61,6 +84,20 @@
 
 .opening-hours-container {
   grid-area: hours;
+  min-width: 0;
+}
+
+.opening-hours-table {
+  font-size: clamp(0.9rem, 0.3vw + 0.85rem, 1rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.opening-hours-table .day-column {
+  width: 40%;
+}
+
+.opening-hours-table .time-column {
+  width: 30%;
 }
 
 .philosophy-container {
@@ -76,7 +113,20 @@
   border-bottom: 2px solid var(--primary-color);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 901px) and (max-width: 999px) {
+  .opening-hours-table {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .opening-hours-table {
+    font-size: .8rem;
+  }
+}
+
+
+@media (max-width: 900px) {
   .about-content-box {
     width: calc(100% - 2rem);
     grid-template-columns: 1fr;
