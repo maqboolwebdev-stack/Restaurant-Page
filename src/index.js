@@ -7,4 +7,4 @@ import './menu/menu.css';
 import './about/about.js';
 import './about/about.css';
 import './cursor/cursor.js';
-
+import './smoothScroll.js';

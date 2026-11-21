@@ -268,3 +268,11 @@ html {
   scrollbar-color: var(--primary-color) var(--container-background-color);
   scrollbar-width: thin;
 }
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
