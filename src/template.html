@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#800080" />
     <title>Restaurant Page</title>
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <header>
-      <nav>
-        <button class="btn" id="home-btn">Home</button>
-        <button class="btn" id="menu-btn">Menu</button>
-        <button class="btn" id="about-btn">About</button>
+      <nav aria-label="Primary navigation">
+        <button type="button" class="btn" id="home-btn" aria-controls="content">Home</button>
+        <button type="button" class="btn" id="menu-btn" aria-controls="content">Menu</button>
+        <button type="button" class="btn" id="about-btn" aria-controls="content">About</button>
       </nav>
     </header>
 
-    <div id="content"></div>
+    <main id="content" tabindex="-1"></main>
   </body>
 </html>

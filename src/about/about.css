@@ -33,6 +33,29 @@
   align-items: center;
 }
 
+.opening-hours-container dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.opening-hours-container dt {
+  font-weight: 700;
+}
+
+.opening-hours-container dd {
+  margin: 0;
+  text-align: right;
+}
+
+.phone-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
 .story-container {
   grid-area: story;
 }

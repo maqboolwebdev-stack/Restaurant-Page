@@ -7,9 +7,10 @@ import { loadMenu } from '../menu/menu.js';
 function loadHome() {
   // add style to home-btn when home page load
   setActiveNav('home-btn');
+  document.title = 'Ember & Olive';
 
   // creating elements
-  const headingContainer = document.createElement('div');
+  const headingContainer = document.createElement('header');
   const heading = document.createElement('h1');
   const tagline1 = document.createElement('p');
   const tagline2 = document.createElement('p');
@@ -31,8 +32,10 @@ function loadHome() {
   headingContainer.append(heading, tagline1, tagline2, exploreBtn);
 
   // creating elements
-  const welcomeSection = document.createElement('div');
+  const welcomeSection = document.createElement('section');
+  welcomeSection.setAttribute('aria-labelledby', 'welcome-heading');
   const welcomeText = document.createElement('h2');
+  welcomeText.id = 'welcome-heading';
   const welcomeDescription1 = document.createElement('p');
   const welcomeDescription2 = document.createElement('p');
 
@@ -41,7 +44,7 @@ function loadHome() {
   welcomeText.className = 'welcome-text';
 
   // filling the data to elements
-  welcomeText.textContent = 'welcome-text';
+  welcomeText.textContent = 'Welcome to Ember & Olive';
   welcomeDescription1.textContent = `At Ember & Olive, we believe great food starts with simple ingredients
   and bold flavours. From our wood-fired oven to your table, every dish is prepared with care and served fresh.`;
   welcomeDescription2.textContent = `Whether you're joining us for a quick lunch, a family dinner, or a relaxed evening with friends, there's always something delicious waiting for you.`;
@@ -50,8 +53,10 @@ function loadHome() {
   welcomeSection.append(welcomeText, welcomeDescription1, welcomeDescription2);
 
   // creating elements
-  const todayContainer = document.createElement('div');
+  const todayContainer = document.createElement('section');
+  todayContainer.setAttribute('aria-labelledby', 'today-heading');
   const todaySpecial = document.createElement('h2');
+  todaySpecial.id = 'today-heading';
   const todayTitle = document.createElement('h3');
   const todayPrice = document.createElement('p');
 
@@ -68,9 +73,9 @@ function loadHome() {
   todayContainer.append(todaySpecial, todayTitle, todayPrice);
 
   // creating elements
-  const quoteContainer = document.createElement('div');
+  const quoteContainer = document.createElement('aside');
   const quoteHeading = document.createElement('h3');
-  const quoteText = document.createElement('q');
+  const quoteText = document.createElement('blockquote');
 
   // adding style classes
   quoteContainer.className = 'quote-container';
@@ -99,6 +104,7 @@ function loadHome() {
     contentBox.innerHTML = '';
 
     loadMenu();
+    contentBox.focus({ preventScroll: true });
   });
 }
 
@@ -112,6 +118,7 @@ link.className = 'link';
 
 link.href = `https://github.com/maqboolwebdev-stack/Restaurant-Page`;
 link.textContent = `Created by Waqas Maqbool`;
+link.setAttribute('aria-label', 'Created by Waqas Maqbool - view the project on GitHub');
 
 // Appending element
 footer.append(link); // in footer and,
@@ -125,4 +132,5 @@ homeBtn.addEventListener('click', function () {
   contentBox.innerHTML = '';
 
   loadHome();
+  contentBox.focus({ preventScroll: true });
 });

@@ -13,6 +13,14 @@
   place-items: center;
 }
 
+.menu-category {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1rem;
+}
+
 .menu-items {
   padding: 1rem;
   width: 70%;

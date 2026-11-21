@@ -7,8 +7,8 @@ const menuBtn = document.querySelector('#menu-btn');
 
 function createMenuItem(item) {
   // creating elements
-  const menuItem = document.createElement('div');
-  const name = document.createElement('h2');
+  const menuItem = document.createElement('article');
+  const name = document.createElement('h3');
   const description = document.createElement('p');
   const price = document.createElement('p');
 
@@ -32,26 +32,31 @@ function createMenuItem(item) {
 export function loadMenu() {
   // add style menuBtn when Menu load
   setActiveNav('menu-btn');
+  document.title = 'Menu | Ember & Olive';
 
   // add style class for Menu main container
   contentBox.className = 'menu-content';
 
+  const pageHeading = document.createElement('h1');
+  pageHeading.className = 'menu-items-heading';
+  pageHeading.textContent = 'Our Menu';
+  contentBox.append(pageHeading);
+
   menuData.forEach((category) => {
-  // This will iterate over MenuData and generate
-  // category headings and menu items for each category and item.
-    const categoryHeading = document.createElement('h1');
+    const categorySection = document.createElement('section');
+    categorySection.className = 'menu-category';
+    const categoryHeading = document.createElement('h2');
 
-    // add style class
     categoryHeading.className = 'menu-items-heading';
-    // and Assign heading
     categoryHeading.textContent = category.category;
-
-    contentBox.append(categoryHeading);
+    categorySection.append(categoryHeading);
 
     category.items.forEach((item) => {
       const menuItem = createMenuItem(item);
-      contentBox.append(menuItem);
+      categorySection.append(menuItem);
     });
+
+    contentBox.append(categorySection);
   });
 }
 
@@ -60,4 +65,5 @@ menuBtn.addEventListener('click', function () {
   contentBox.innerHTML = '';
 
   loadMenu();
+  contentBox.focus({ preventScroll: true });
 });

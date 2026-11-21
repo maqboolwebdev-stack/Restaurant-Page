@@ -6,18 +6,19 @@ const aboutBtn = document.querySelector('#about-btn');
 function loadAbout() {
   // add style to about when about page load
   setActiveNav('about-btn');
+  document.title = 'About | Ember & Olive';
 
   // creating elements
-  const storyContainer = document.createElement('div');
+  const storyContainer = document.createElement('section');
+  storyContainer.setAttribute('aria-labelledby', 'story-heading');
   const storyHeading = document.createElement('h1');
-  const storyHeadingDescription = document.createElement('h3');
+  storyHeading.id = 'story-heading';
   const storyText1 = document.createElement('p');
   const storyText2 = document.createElement('p');
 
   // adding style classes
   storyContainer.className = 'story-container';
   storyHeading.className = 'common-style';
-  storyHeadingDescription.className = 'common-style';
 
   // filling the data to elements
   storyHeading.textContent = 'Our Story';
@@ -27,14 +28,15 @@ function loadAbout() {
   // Appending elements to sub-container
   storyContainer.append(
     storyHeading,
-    storyHeadingDescription,
     storyText1,
     storyText2,
   );
 
   // creating elements
-  const philosophyContainer = document.createElement('div');
+  const philosophyContainer = document.createElement('section');
+  philosophyContainer.setAttribute('aria-labelledby', 'philosophy-heading');
   const philosophyHeading1 = document.createElement('h2');
+  philosophyHeading1.id = 'philosophy-heading';
   const philosophyHeading2 = document.createElement('h3');
   const philosophyText1 = document.createElement('p');
   const philosophyHeading3 = document.createElement('h3');
@@ -70,15 +72,11 @@ function loadAbout() {
   );
 
   // creating elements
-  const openingHoursContainer = document.createElement('div');
+  const openingHoursContainer = document.createElement('section');
+  openingHoursContainer.setAttribute('aria-labelledby', 'hours-heading');
   const openingHoursHeading = document.createElement('h2');
-  const monday = document.createElement('p');
-  const tuesday = document.createElement('p');
-  const wednesday = document.createElement('p');
-  const thursday = document.createElement('p');
-  const friday = document.createElement('p');
-  const saturday = document.createElement('p');
-  const sunday = document.createElement('p');
+  openingHoursHeading.id = 'hours-heading';
+  const openingHoursList = document.createElement('dl');
 
   // adding style classes
   openingHoursContainer.className = 'opening-hours-container';
@@ -86,32 +84,33 @@ function loadAbout() {
   openingHoursHeading.textContent = `Opening Hours`;
 
   // filling the data to elements
-  monday.textContent = `Monday: 12:00 PM - 10:00 PM`;
-  tuesday.textContent = `Tuesday: 12:00 PM - 10:00 PM`;
-  wednesday.textContent = `Wednesday: 12:00 PM - 10:00 PM`;
-  thursday.textContent = `Thursday: 12:00 PM - 10:30 PM`;
-  friday.textContent = `Friday: 12:00 PM - 11:00 PM`;
-  saturday.textContent = `Saturday: 11:00 PM - 11:00 PM`;
-  sunday.textContent = `Sunday: 11:00 PM - 9:00 PM`;
+  const hours = [
+    ['Monday', '12:00 PM - 10:00 PM'],
+    ['Tuesday', '12:00 PM - 10:00 PM'],
+    ['Wednesday', '12:00 PM - 10:00 PM'],
+    ['Thursday', '12:00 PM - 10:30 PM'],
+    ['Friday', '12:00 PM - 11:00 PM'],
+    ['Saturday', '11:00 AM - 11:00 PM'],
+    ['Sunday', '11:00 AM - 9:00 PM'],
+  ];
 
-  // Appending elements to sub-container
-  openingHoursContainer.append(
-    openingHoursHeading,
-    monday,
-    tuesday,
-    wednesday,
-    thursday,
-    friday,
-    saturday,
-    sunday,
-  );
+  hours.forEach(([day, time]) => {
+    const dayTerm = document.createElement('dt');
+    const timeDescription = document.createElement('dd');
+    dayTerm.textContent = day;
+    timeDescription.textContent = time;
+    openingHoursList.append(dayTerm, timeDescription);
+  });
+
+  openingHoursContainer.append(openingHoursHeading, openingHoursList);
 
   // creating elements
-  const locationContainer = document.createElement('div');
-  const locationHeading = document.createElement('h3');
+  const locationContainer = document.createElement('section');
+  locationContainer.setAttribute('aria-labelledby', 'location-heading');
+  const locationHeading = document.createElement('h2');
+  locationHeading.id = 'location-heading';
   const locationAddress = document.createElement('address');
-  const locationPhone = document.createElement('p');
-  const locationPhoneStrong = document.createElement('strong');
+  const locationPhone = document.createElement('a');
 
   // adding style classes
   locationContainer.className = 'location-container';
@@ -120,14 +119,13 @@ function loadAbout() {
   locationAddress.textContent = '24 Willow Lane, Manchester, UK';
 
   // filling the data to elements
-  locationPhoneStrong.textContent = 'Phone: ';
-  locationPhone.textContent = '+44 161 555 0198';
-  locationPhone.prepend(locationPhoneStrong);
+  locationPhone.textContent = 'Phone: +44 161 555 0198';
+  locationPhone.href = 'tel:+441615550198';
+  locationPhone.className = 'phone-link';
 
   // Appending elements to sub-container
   locationContainer.append(locationHeading, locationAddress, locationPhone);
 
-  contentBox.removeAttribute('id');
   contentBox.className = 'about-content-box';
 
   // Appending sub-container to Main-container
@@ -144,4 +142,5 @@ aboutBtn.addEventListener('click', function () {
   contentBox.innerHTML = '';
 
   loadAbout();
+  contentBox.focus({ preventScroll: true });
 });
