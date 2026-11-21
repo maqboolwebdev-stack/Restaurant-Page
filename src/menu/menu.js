@@ -13,7 +13,7 @@ function createMenuItem(item) {
   const price = document.createElement('p');
 
   //  add style classes
-  menuItem.className = 'menu-items';
+  menuItem.className = 'menu-items surface-card';
   name.className = 'menu-items-heading';
   price.className = 'price';
 
@@ -39,7 +39,7 @@ export function loadMenu() {
   contentBox.className = 'menu-content';
 
   const pageHeading = document.createElement('h1');
-  pageHeading.className = 'menu-items-heading';
+  pageHeading.className = 'menu-items-heading surface-card';
   pageHeading.textContent = 'Our Menu';
   contentBox.append(pageHeading);
 
@@ -48,7 +48,7 @@ export function loadMenu() {
     categorySection.className = 'menu-category';
     const categoryHeading = document.createElement('h2');
 
-    categoryHeading.className = 'menu-items-heading';
+    categoryHeading.className = 'menu-items-heading surface-card';
     categoryHeading.textContent = category.category;
     categorySection.append(categoryHeading);
 

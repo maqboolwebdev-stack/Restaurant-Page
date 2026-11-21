@@ -89,6 +89,45 @@ body[data-page='about'] {
   color: var(--primary-color);
 }
 
+.surface-card {
+  border: 1px solid transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .surface-card {
+    transition: all 180ms ease;
+  }
+
+  #content .surface-card:hover {
+    background: var(--card-hover-background-color);
+    border-color: var(--card-hover-border-color);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    color: var(--card-hover-text-color);
+  }
+
+  #content .surface-card:hover h1,
+  #content .surface-card:hover h2,
+  #content .surface-card:hover h3,
+  #content .surface-card:hover h4,
+  #content .surface-card:hover h5,
+  #content .surface-card:hover h6,
+  #content .surface-card:hover .common-style,
+  #content .surface-card:hover .menu-items-heading,
+  #content .surface-card:hover .heading,
+  #content .surface-card:hover .welcome-text,
+  #content .surface-card:hover .today,
+  #content .surface-card:hover .quote-heading,
+  #content .surface-card:hover .phone-link,
+  #content .surface-card:hover .price {
+    color: var(--card-hover-heading-color);
+  }
+
+  #content .surface-card:hover .common-style,
+  #content .surface-card:hover .menu-items-heading {
+    border-bottom-color: var(--card-hover-heading-color);
+  }
+}
+
 nav {
   display: flex;
   width: 100%;

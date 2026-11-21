@@ -18,7 +18,7 @@ function loadAbout() {
   const storyText2 = document.createElement('p');
 
   // adding style classes
-  storyContainer.className = 'story-container';
+  storyContainer.className = 'story-container surface-card';
   storyHeading.className = 'common-style';
 
   // filling the data to elements
@@ -46,7 +46,7 @@ function loadAbout() {
   const philosophyText3 = document.createElement('p');
 
   // adding style classes
-  philosophyContainer.className = 'philosophy-container';
+  philosophyContainer.className = 'philosophy-container surface-card';
   philosophyHeading1.className = 'common-style';
   philosophyHeading2.className = 'common-style';
   philosophyHeading3.className = 'common-style';
@@ -80,7 +80,7 @@ function loadAbout() {
   const openingHoursList = document.createElement('dl');
 
   // adding style classes
-  openingHoursContainer.className = 'opening-hours-container';
+  openingHoursContainer.className = 'opening-hours-container surface-card';
   openingHoursHeading.className = 'common-style';
   openingHoursHeading.textContent = `Opening Hours`;
 
@@ -114,7 +114,7 @@ function loadAbout() {
   const locationPhone = document.createElement('a');
 
   // adding style classes
-  locationContainer.className = 'location-container';
+  locationContainer.className = 'location-container surface-card';
   locationHeading.className = 'common-style';
   locationHeading.textContent = 'Location';
   locationAddress.textContent = '24 Willow Lane, Manchester, UK';

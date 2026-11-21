@@ -18,7 +18,7 @@ function loadHome() {
   const exploreBtn = document.createElement('button');
 
   // adding style classes
-  headingContainer.className = 'heading-container';
+  headingContainer.className = 'heading-container surface-card';
   heading.className = 'heading';
   tagline1.className = 'hero-tagline';
   tagline2.className = 'hero-description';
@@ -43,7 +43,7 @@ function loadHome() {
   const welcomeDescription2 = document.createElement('p');
 
   // adding style classes
-  welcomeSection.className = 'welcome-section';
+  welcomeSection.className = 'welcome-section surface-card';
   welcomeText.className = 'welcome-text';
 
   // filling the data to elements
@@ -64,7 +64,7 @@ function loadHome() {
   const todayPrice = document.createElement('p');
 
   // adding style classes
-  todayContainer.className = 'today-sp';
+  todayContainer.className = 'today-sp surface-card';
   todaySpecial.className = 'today';
 
   // filling the data to elements
@@ -81,7 +81,7 @@ function loadHome() {
   const quoteText = document.createElement('blockquote');
 
   // adding style classes
-  quoteContainer.className = 'quote-container';
+  quoteContainer.className = 'quote-container surface-card';
   quoteHeading.className = 'quote-heading';
 
   // filling the data to elements
