@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <defs>
+    <linearGradient id="room" x2="0" y2="1">
+      <stop stop-color="#554238"/><stop offset=".56" stop-color="#302722"/><stop offset="1" stop-color="#211c19"/>
+    </linearGradient>
+    <linearGradient id="window" x2="0" y2="1">
+      <stop stop-color="#83927a"/><stop offset="1" stop-color="#d6aa69"/>
+    </linearGradient>
+    <radialGradient id="lamp">
+      <stop stop-color="#ffd58b" stop-opacity=".85"/><stop offset="1" stop-color="#f0aa4b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="32"/></filter>
+    <pattern id="floor" width="150" height="88" patternUnits="userSpaceOnUse">
+      <path d="M0 0h150M0 44h150M75 0v44M0 44v44M150 44v44" fill="none" stroke="#c49a68" stroke-opacity=".17" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <path fill="url(#room)" d="M0 0h1600v1000H0z"/>
+  <path d="M0 620h1600v380H0z" fill="#382b23"/>
+  <path d="M0 620h1600v380H0z" fill="url(#floor)"/>
+  <ellipse cx="820" cy="760" rx="720" ry="200" fill="#e69f4c" opacity=".14" filter="url(#soft)"/>
+  <rect x="520" y="130" width="560" height="420" rx="8" fill="#241f1b" stroke="#887257" stroke-width="22"/>
+  <rect x="550" y="160" width="500" height="360" fill="url(#window)"/>
+  <path d="M800 160v360M550 340h500" stroke="#3b3429" stroke-width="18"/>
+  <path d="M560 492q110-170 220-90 110-170 250-4v122H560z" fill="#47553c" opacity=".9"/>
+  <path d="M580 465q85-85 170-18 84-100 182-12 57-55 102-23v108H580z" fill="#65734a"/>
+  <rect x="0" y="540" width="1600" height="24" fill="#77573d"/>
+  <g>
+    <path d="M305 0v185M1290 0v170" stroke="#211b18" stroke-width="10"/>
+    <path d="M250 185q55 91 110 0zM1235 170q55 91 110 0z" fill="#c98a47"/>
+    <ellipse cx="305" cy="255" rx="205" ry="145" fill="url(#lamp)"/>
+    <ellipse cx="1290" cy="240" rx="200" ry="145" fill="url(#lamp)"/>
+  </g>
+  <g fill="#5a3024">
+    <path d="M155 705h280l-24 185H180z"/><path d="M1180 700h290l-30 190h-230z"/>
+    <path d="M620 745h350l-20 160H650z"/>
+  </g>
+  <g fill="#c09259">
+    <ellipse cx="295" cy="700" rx="235" ry="45"/><ellipse cx="1325" cy="695" rx="245" ry="47"/>
+    <ellipse cx="800" cy="735" rx="255" ry="44"/>
+  </g>
+  <g fill="#e2d2b6">
+    <ellipse cx="290" cy="684" rx="82" ry="17"/><ellipse cx="1320" cy="678" rx="87" ry="18"/>
+    <ellipse cx="800" cy="720" rx="90" ry="18"/>
+  </g>
+  <g fill="#75804b">
+    <circle cx="272" cy="680" r="12"/><circle cx="304" cy="690" r="10"/>
+    <circle cx="1300" cy="676" r="12"/><circle cx="1345" cy="681" r="11"/>
+    <circle cx="780" cy="713" r="12"/><circle cx="818" cy="724" r="11"/>
+  </g>
+  <g fill="#30241e">
+    <path d="M190 740h34v180h-34zm185 0h34v180h-34zm840 0h34v180h-34zm180 0h34v180h-34z"/>
+  </g>
+</svg>
